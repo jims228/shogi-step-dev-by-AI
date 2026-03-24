@@ -1,0 +1,91 @@
+/**
+ * W1-U5-L1: 飛車はまっすぐ遠くまで
+ * 飛車が縦横に何マスでも動けることを学ぶ
+ */
+import type { Lesson } from '../../types/lesson';
+
+export const W1_U5_L1_ROOK: Lesson = {
+  id: 'w1-u5-l1',
+  title: 'ひしゃは まっすぐ とおくまで',
+  unitId: 'w1-u5',
+  worldId: 'w1',
+  order: 1,
+  steps: [
+    {
+      type: 'explain',
+      text: '「ひしゃ（飛車）」は しょうぎで いちばん つよい こまの ひとつです。たてと よこに なんマスでも すすめます。',
+      coachText: 'すごい こまが でてきたよ！',
+    },
+    {
+      type: 'explain',
+      text: 'ひしゃは たてと よこに どこまでも まっすぐ うごけます。ななめには うごけません。',
+      coachText: 'じゅうじ（＋）の かたちを イメージしてね。',
+      sfen: '9/9/9/9/4R4/9/9/9/9',
+      highlights: [
+        { row: 0, col: 4 },
+        { row: 1, col: 4 },
+        { row: 2, col: 4 },
+        { row: 3, col: 4 },
+        { row: 5, col: 4 },
+        { row: 6, col: 4 },
+        { row: 7, col: 4 },
+        { row: 8, col: 4 },
+        { row: 4, col: 0 },
+        { row: 4, col: 1 },
+        { row: 4, col: 2 },
+        { row: 4, col: 3 },
+        { row: 4, col: 5 },
+        { row: 4, col: 6 },
+        { row: 4, col: 7 },
+        { row: 4, col: 8 },
+      ],
+    },
+    {
+      type: 'tap_square',
+      instruction: 'ひしゃが うごける マスを ひとつ タップしてね。',
+      coachText: 'たてか よこの マスだよ。',
+      sfen: '9/9/9/9/4R4/9/9/9/9',
+      correctSquares: [
+        { row: 0, col: 4 },
+        { row: 1, col: 4 },
+        { row: 2, col: 4 },
+        { row: 3, col: 4 },
+        { row: 5, col: 4 },
+        { row: 6, col: 4 },
+        { row: 7, col: 4 },
+        { row: 8, col: 4 },
+        { row: 4, col: 0 },
+        { row: 4, col: 1 },
+        { row: 4, col: 2 },
+        { row: 4, col: 3 },
+        { row: 4, col: 5 },
+        { row: 4, col: 6 },
+        { row: 4, col: 7 },
+        { row: 4, col: 8 },
+      ],
+      highlights: [{ row: 4, col: 4 }],
+      successText: 'そのとおり！ひしゃは たてよこに どこまでも いけるよ。',
+      failText: 'ひしゃは ななめには いけないよ。たてか よこの マスを えらんでね。',
+    },
+    {
+      type: 'explain',
+      text: 'ただし、ほかの こまを とびこえることは できません。あいだに こまが あると、そこまでしか いけません。',
+      coachText: 'とびこえられない、って だいじだよ。',
+      sfen: '9/9/4p4/9/4R4/9/9/9/9',
+      highlights: [{ row: 3, col: 4 }],
+    },
+    {
+      type: 'explain',
+      text: 'ひしゃは「おおごま」と よばれます。とても つよいので、たいせつに つかいましょう。',
+      coachText: 'ひしゃは たからもの だよ。',
+    },
+    {
+      type: 'quiz',
+      question: 'ひしゃは どの ほうこうに うごける？',
+      coachText: 'じゅうじの かたちを おもいだそう。',
+      choices: ['ななめ', 'たてと よこ', 'まえだけ'],
+      correctIndex: 1,
+      explanation: 'ひしゃは たてと よこに なんマスでも うごけます。じゅうじ（＋）の かたちです。',
+    },
+  ],
+};
