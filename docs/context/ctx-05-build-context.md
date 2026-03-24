@@ -14,7 +14,7 @@ Builder がすぐ参照できる実装仕様。
 | Routing | Expo Router | ファイルベース |
 | Storage | @react-native-async-storage/async-storage | — |
 | Styling | React Native StyleSheet + テーマトークン | Tailwind等の外部CSSフレームワークは使わない |
-| Testing | Jest + @testing-library/react-native | — |
+| Testing | Jest + jest-expo + @testing-library/react-native | ts-jest は使わない |
 | Build | EAS Build | — |
 | Linting | ESLint (Expo default) | — |
 
@@ -287,3 +287,25 @@ interface LessonProgress {
 | ダークモード | v1はライトモードのみ | v2 |
 | 横画面対応 | portrait only | v2 |
 | タブレット最適化 | phone first | v2 |
+
+---
+
+## 11. Test Setup Policy
+
+### フレームワーク
+- **Preset**: `jest-expo`（Babel transform 経由で TS/TSX を変換）
+- **ts-jest は使わない**: Expo プロジェクトでは jest-expo が TS 変換を担当するため不要
+- **テストライブラリ**: `@testing-library/react-native`（コンポーネントテスト用）
+
+### 設定場所
+- **package.json の `"jest"` セクションに一元管理**（jest.config.js / jest.config.ts は作成しない）
+- `shogi-step/` サブディレクトリは `modulePathIgnorePatterns` で除外
+
+### テストファイル配置
+- `tests/` ディレクトリ（root直下）に配置
+- ファイル名: `*.test.ts` / `*.test.tsx`
+
+### コマンド
+- `npm test` — 全テスト実行
+- `npm test -- --watch` — ウォッチモード
+- `npm test -- path/to/file` — 特定ファイル実行
