@@ -22,7 +22,10 @@ function loadLessonFiles(): { filename: string; data: unknown }[] {
     try {
       // eslint-disable-next-line @typescript-eslint/no-var-requires
       const mod = require(path.join(LESSONS_DIR, file));
-      const data = mod.default || mod.lesson || mod;
+      const data = mod.default ?? mod.lesson ??
+        Object.values(mod).find((v: unknown) =>
+          v !== null && typeof v === 'object' && 'steps' in (v as Record<string, unknown>)
+        ) ?? mod;
       lessons.push({ filename: file, data });
     } catch {
       // Skip files that can't be loaded
