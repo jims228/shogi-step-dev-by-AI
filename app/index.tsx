@@ -9,8 +9,8 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { colors, spacing, radius, typography, shadow } from '../src/theme';
-import { worlds } from '../src/data/roadmap';
-import type { UnitMeta } from '../src/data/roadmap';
+import { WORLD_1, W1_UNITS, getLessonsByUnitId } from '../src/data/roadmap';
+import type { Unit } from '../src/types/lesson';
 import { useProgress } from '../src/hooks/useProgress';
 
 export default function RoadmapScreen() {
@@ -18,12 +18,9 @@ export default function RoadmapScreen() {
   const router = useRouter();
   const { isLoaded, isCompleted, completedCount } = useProgress();
 
-  const world = worlds[0]; // World 1
-
-  const handleUnitPress = (unit: UnitMeta) => {
-    // Navigate to the first uncompleted lesson in this unit
-    const target =
-      unit.lessons.find((l) => !isCompleted(l.id)) ?? unit.lessons[0];
+  const handleUnitPress = (unit: Unit) => {
+    const lessons = getLessonsByUnitId(unit.id);
+    const target = lessons.find((l) => !isCompleted(l.id)) ?? lessons[0];
     if (target) {
       router.push(`/lesson/${target.id}`);
     }
@@ -45,7 +42,7 @@ export default function RoadmapScreen() {
       </View>
 
       {/* World title */}
-      <Text style={styles.worldTitle}>{world.title}</Text>
+      <Text style={styles.worldTitle}>{WORLD_1.title}</Text>
 
       {/* Unit cards */}
       <ScrollView
@@ -56,10 +53,11 @@ export default function RoadmapScreen() {
         ]}
         showsVerticalScrollIndicator={false}
       >
-        {world.units.map((unit) => {
-          const lessonIds = unit.lessons.map((l) => l.id);
+        {W1_UNITS.map((unit) => {
+          const lessons = getLessonsByUnitId(unit.id);
+          const lessonIds = lessons.map((l) => l.id);
           const done = completedCount(lessonIds);
-          const total = unit.lessons.length;
+          const total = lessons.length;
 
           return (
             <Pressable

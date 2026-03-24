@@ -15,7 +15,7 @@ export const W1_U2_L3_PAWN_DRILL: Lesson = {
       type: 'tap_square',
       instruction: 'ふが すすめる マスを タップしてね。',
       coachText: 'まえは どこかな？',
-      sfen: '9/9/9/9/9/9/9/2P4/9',
+      sfen: '9/9/9/9/9/9/9/2P6/9',
       correctSquares: [{ row: 6, col: 2 }],
       highlights: [{ row: 7, col: 2 }],
       successText: 'そのとおり！',

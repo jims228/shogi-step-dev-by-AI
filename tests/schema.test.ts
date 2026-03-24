@@ -65,7 +65,7 @@ describe('validateLesson — invalid top-level fields', () => {
 
   test('missing id returns error', () => {
     const lesson = createMockLesson();
-    (lesson as Record<string, unknown>).id = '';
+    (lesson as unknown as Record<string, unknown>).id = '';
     const result = validateLesson(lesson);
     expect(result.valid).toBe(false);
     expect(result.errors).toContain('id must be a non-empty string');
@@ -73,7 +73,7 @@ describe('validateLesson — invalid top-level fields', () => {
 
   test('missing title returns error', () => {
     const lesson = createMockLesson();
-    (lesson as Record<string, unknown>).title = '';
+    (lesson as unknown as Record<string, unknown>).title = '';
     const result = validateLesson(lesson);
     expect(result.valid).toBe(false);
     expect(result.errors).toContain('title must be a non-empty string');
@@ -81,7 +81,7 @@ describe('validateLesson — invalid top-level fields', () => {
 
   test('missing unitId returns error', () => {
     const lesson = createMockLesson();
-    (lesson as Record<string, unknown>).unitId = '';
+    (lesson as unknown as Record<string, unknown>).unitId = '';
     const result = validateLesson(lesson);
     expect(result.valid).toBe(false);
     expect(result.errors).toContain('unitId must be a non-empty string');
@@ -89,7 +89,7 @@ describe('validateLesson — invalid top-level fields', () => {
 
   test('missing worldId returns error', () => {
     const lesson = createMockLesson();
-    (lesson as Record<string, unknown>).worldId = '';
+    (lesson as unknown as Record<string, unknown>).worldId = '';
     const result = validateLesson(lesson);
     expect(result.valid).toBe(false);
     expect(result.errors).toContain('worldId must be a non-empty string');
@@ -104,7 +104,7 @@ describe('validateLesson — invalid top-level fields', () => {
 
   test('missing steps returns error', () => {
     const lesson = createMockLesson();
-    delete (lesson as Record<string, unknown>).steps;
+    delete (lesson as unknown as Record<string, unknown>).steps;
     const result = validateLesson(lesson);
     expect(result.valid).toBe(false);
     expect(result.errors).toContain('steps must be an array');
