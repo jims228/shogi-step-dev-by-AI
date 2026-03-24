@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "shogi-step",
+    "slug": "shogi-step",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "shogi-step",
+    "platforms": ["ios", "android"],
+    "plugins": ["expo-router"]
+  }
+}
