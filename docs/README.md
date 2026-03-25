@@ -1,6 +1,26 @@
 # docs/ ナビゲーション
 
+## いま何を見ればいいか
+
+| 目的 | ファイル |
+|------|---------|
+| **今やるべきこと** | `project/current-focus.md` |
+| **進捗と既知の問題** | `project/status.md` |
+| **バックログ（Now/Next/Later/Parking）** | `project/backlog.md` |
+| **本線と将来構想の分離** | `project/architecture-lanes.md` |
+
+---
+
 ## Source of Truth（正式ドキュメント）
+
+### `project/` — プロジェクト管理（最優先で参照）
+
+| ファイル | 内容 |
+|---------|------|
+| `current-focus.md` | 今のゴールと完了条件 |
+| `status.md` | 実装状況・既知の問題・ブロッカー |
+| `backlog.md` | Now / Next / Later / Parking の整理 |
+| `architecture-lanes.md` | App Lane（本線）と Explanation Engine Lane（将来）の分離 |
 
 ### `context/` — 運用ドキュメント（常に最新を維持）
 
