@@ -109,15 +109,6 @@
 | 8次元特徴量抽出 | v1では不要 |
 | バッチ解析パイプライン | v1では不要 |
 
-### Future Hooks（v2以降で活用可能性あり）
-
-| 機能 | 活用時期 | 概要 |
-|------|---------|------|
-| ExplanationPlanner | v3+ | レッスン内の説明テキストをAI生成する場合の参考 |
-| Position Features | v3+ | 盤面の評価スコアを学習者に見せる場合 |
-| Castle Detection | W8 | 囲い判定ロジックの参考（_estimate_castle） |
-| Template Commentary | v2+ | テンプレートベースの局面解説（AI不要版）|
-
 ---
 
 ## Source 5: Shogi_AI_Learning（参考利用）

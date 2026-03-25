@@ -34,15 +34,12 @@
 | L9 | EAS Build → TestFlight / 内部テスト配布 | ストアリリース準備 |
 | L10 | ダークモード | v2 |
 
-## Parking（当面触らない）
+## Parking（このリポジトリのスコープ外）
 
 | # | タスク | 理由 |
 |---|--------|------|
-| P1 | Explanation Engine（AI 解説パイプライン） | App Lane 安定後。architecture-lanes.md 参照 |
-| P2 | 対局機能 | プロダクトスコープ外 |
-| P3 | ユーザー認証・クラウド同期 | v3 以降 |
-| P4 | 多言語対応 | v3 以降 |
-| P5 | タブレット最適化 | v2 以降 |
-| P6 | 横画面対応 | v2 以降 |
-| P7 | AI によるレッスン自動生成 | Explanation Engine Lane |
-| P8 | 苦手パターン分析 | Explanation Engine Lane |
+| P1 | 対局機能 | スコープ外 |
+| P2 | ユーザー認証・クラウド同期 | v3 以降 |
+| P3 | 多言語対応 | v3 以降 |
+| P4 | タブレット最適化 | v2 以降 |
+| P5 | 横画面対応 | v2 以降 |
